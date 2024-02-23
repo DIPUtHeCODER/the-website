@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" onchange="fetchData(value)">
+    <div id="output"></div>
+    <script>
+         
+            let Dipesh = document.querySelector("#output")
+
+            function fetchData(a){
+                fetch(`https://dummyjson.com/products/${a}`)
+                .then(response => response.json())
+                .then(data =>{
+                    Dipesh.innerHTML = `
+                        <h1>${data.id}</h1>
+                        <h3><strong>Brand:</strong> ${data.brand}</h3>
+                        <p><strong>Category:</strong> ${data.category}</p>
+                        <p><strong>Price:</strong> ${data.price}</p>
+                        <p><strong>Rating:</strong> ${data.rating}</p>`;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Dipesh.innerHTML = "Error fetching data.";
+                });
+            }
+        ;
+    </script>
+</body>
+</html>

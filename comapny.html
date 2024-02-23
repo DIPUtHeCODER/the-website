@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        #card{
+            height:auto;
+            padding:0.7rem;
+            margin:5rem;
+            width:310px;
+            background-color:rgb(184, 184, 184);
+        }
+        #name{
+            font-size:large;
+            display:inline;
+            
+             
+        }
+        #profile{
+             display:flex;;
+        }
+        #Pphoto{
+            display:inline-block;
+            height:50px;
+            width:50px;
+            margin:10px;
+            border-radius:50%;
+
+        }
+        #photo{
+            height:250px;
+            width:300px;
+            background-color:rgba(199, 197, 194, 0.281);
+        }
+        #text{
+            margin-bottom:3px;
+        }
+        h5 {
+            display:inline;
+            font-style: none;
+        }
+        #details{
+            display:flex;
+            padding:2px;
+            flex-direction: column;
+            line-height: 1px;
+        }
+         
+         
+    </style>
+</head>
+<body>
+    <div id="card" >
+         <div id="profile">
+            <img src="blank.jpg" alt="" id="Pphoto">
+           <div id="details">
+            <h1 id="name"></h1>
+            <h5></h5>
+        </div>
+        </div>
+        <p id="text"></p>
+        <br>
+        <img src="blank1.jpg" alt="" id="photo">
+    </div>
+    
+    <script>
+        function functionProfile() {
+            document.querySelector("#Pphoto").setAttribute('src', 'profile.jpg');
+        }
+    
+        function text() {
+            document.querySelector("#text").innerHTML = "This is a simple card which reflects the demo of a Facebook post.";
+        }
+    
+        function Name() {
+            document.querySelector("#name").innerHTML = "Dipesh Pokhrel";
+        }
+    
+        function Time() {
+            document.querySelector("h5").innerHTML = new Date().getHours();
+        }
+    
+        function Post() {
+            document.querySelector("#photo").setAttribute('src', 'post.jpg');
+        }
+    
+        setTimeout(functionProfile, 1000);
+        setTimeout(text, 500);
+        setTimeout(Name, 600);
+        setTimeout(Time, 700);
+        setTimeout(Post, 2000);
+    </script>
+    
+</body>
+</html>
